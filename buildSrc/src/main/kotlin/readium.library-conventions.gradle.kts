@@ -56,6 +56,15 @@ dependencies {
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.0.4")
 }
 
+publishing {
+    repositories {
+        maven {
+            name = "localRepo"
+            url = uri(layout.buildDirectory.dir("../../../readium-maven"))
+        }
+    }
+}
+
 mavenPublishing {
     coordinates(
         groupId = group.toString(),
